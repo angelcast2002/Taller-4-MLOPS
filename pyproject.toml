@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pipeline-ml"               
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+  "click>=8.1",
+  "numpy>=1.26",
+  "pandas>=2.2",
+  "scikit-learn>=1.5",
+  "joblib>=1.4"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+pipeline-ml-train = "pipeline.pipeline:cli"   
+pipeline = "pipeline.pipeline:cli"
